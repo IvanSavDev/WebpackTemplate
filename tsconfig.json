@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "target": "ES6",
+    "outDir": "ts",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ES6",
+    "esModuleInterop": true,
+    "jsx": "react"
+  },
+  "include": ["src/**/*", "declaration.d.ts"]
+}
