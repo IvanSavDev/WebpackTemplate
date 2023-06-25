@@ -12,10 +12,16 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
   mode,
-  entry: './src/index.tsx',
+  entry: {
+    index: './src/index.tsx',
+    // another:'./src/FirstComponent/FirstComponent.tsx',
+    // another2: './src/SecondComponent/SecondComponent.tsx',
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js',
+    clean: true,
   },
   module: {
     rules: [
@@ -34,14 +40,17 @@ module.exports = {
       },
     ],
   },
-
   resolve: {
     extensions: ['.js', '.ts', '.tsx', '.jsx', 'css', 'scss'],
     alias: {
       ['@']: path.resolve(__dirname, 'src/'),
     },
   },
-
+  // optimization: {
+  //   splitChunks: {
+  //     chunks: 'all',
+  //   },
+  // },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',

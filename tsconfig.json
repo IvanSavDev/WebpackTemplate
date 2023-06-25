@@ -7,9 +7,10 @@
     "outDir": "ts",
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "ES6",
+    "module": "ESNext",
     "esModuleInterop": true,
-    "jsx": "react"
+    "jsx": "react",
+    "moduleResolution": "node"
   },
   "include": ["src/**/*", "declaration.d.ts"]
 }
